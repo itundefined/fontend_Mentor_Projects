@@ -54,7 +54,7 @@
 <body>
 
     <!-- NavBar -->
-    <nav class="flex container px-[5%] py-5 items-center justify-between mx-auto">
+    <nav class="flex container px-[5%] py-10 items-center justify-between mx-auto md:px-[10%]">
         
     <div>
         <img src="./images/logo.svg" alt="Logo">
@@ -67,12 +67,12 @@
     </nav>
 
 
-    <!-- Hero Section -->
-    <section class='container px-[6%] py-5 mx-auto my-0 space-x-0 space-y-0 flex flex-col items-center justify-between'>
+    <!-- Hero Section Done -->
+    <section class='container px-[6%]  py-20  mx-auto my-0 space-x-0 space-y-0 flex flex-col items-center justify-between md:flex-row-reverse justify-between md:px-[10%]'>
         
         <!-- image -->
 
-        <div class="analysis_chart">
+        <div class="analysis_chart md:w-[50%]">
             
             <img src="./images/illustration-intro.svg" alt="chart">
 
@@ -80,33 +80,33 @@
 
         <!-- Text Data -->
 
-        <div class="analysis_text_data flex flex-col items-center">
+        <div class="analysis_text_data flex flex-col items-center md:items-start md:w-[50%]">
 
-            <h2 class="font-bold text-center text-darkBlue text-3xl">Bring everyone togather to build a better products.</h2>
+            <h2 class="font-bold text-center text-darkBlue text-3xl md:text-left">Bring everyone<br> togather to build better products.</h2>
 
-            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6">
-                Manage makes it simple for software
-                teams to plan day-to-day tasks while
+            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 md:text-left">
+                Manage makes it simple for software<br>
+                teams to plan day-to-day tasks while<br>
                 keeping the larger team goals in view.
             </p>
 
-            <button class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+            <button class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d]">Get Started</button>
         </div>
 
     </section>
 
 
-    <!-- section 2 -->
+    <!-- section 2 Done -->
     
-    <section class='mx-auto my-0 space-x-0 space-y-0 flex flex-col items-end'>
+    <section class='mx-auto my-0 space-x-0 space-y-0 flex flex-col items-end md:flex-row md:items-start md:container md:px-[4%]'>
 
         <!-- Text Data 1 -->
 
-        <div class="text_data flex flex-col items-center container px-[6%] py-6 mx-auto">
+        <div class="text_data flex flex-col items-center container px-[6%] py-6 mx-auto space-y-5 md:items-start md:py-0">
 
-            <h2 class="font-bold text-center text-darkBlue text-3xl">What's different about Manage?</h2>
+            <h2 class="font-bold text-center text-darkBlue text-3xl md:text-left">What's different about Manage?</h2>
 
-            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6">
+            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 md:text-left">
                 Manage provides all the functionality your
                 team needs, without the complexity. Our
                 software is tailor-made for modern digital
@@ -123,76 +123,98 @@
 
             <!-- item1 -->
 
-            <div class="item1">
-                <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full">
-                    
-                    <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold">
-                        01
-                    </div>
+            <div class="item1 flex items-start space-x-2">
 
-                    <h3 class="font-bold text-sm">
-                        Track company-wide progress
-                    </h3>
-
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    01
                 </div>
 
-                <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
-                    See how your day-to-day tasks fit into the wider
-                    vision. Go from tracking progress at the milestone
-                    level all the way done to the smallest of details.
-                    Never lose sight of the bigger picture again.
-                </p>
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            01
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Track company-wide progress
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        See how your day-to-day tasks fit into the wider
+                        vision. Go from tracking progress at the milestone
+                        level all the way done to the smallest of details.
+                        Never lose sight of the bigger picture again.</p>
+    
+                </div>
 
             </div>
 
             <!-- item2 -->
 
-            <div class="item2">
-                <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full">
-                    
-                    <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold">
-                        02
-                    </div>
+            <div class="item1 flex items-start space-x-2">
 
-                    <h3 class="font-bold text-sm">
-                        Advanced built-in reports
-                    </h3>
-
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    02
                 </div>
 
-                <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
-                    Set internal delivery estimates and track progress
-                    toward company goals. Our customisable
-                    dashboard helps you build out the reports you
-                    need to keep key stakeholders informed.
-                </p>
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            02
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Advanced built-in reports
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        Set internal delivery estimates and track progress
+                        toward company goals. Our customisable
+                        dashboard helps you build out the reports you
+                        need to keep key stakeholders informed.</p>
+    
+                </div>
 
             </div>
 
 
             <!-- item3 -->
 
-            <div class="item3">
-                <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full">
-                    
-                    <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold">
-                        03
-                    </div>
+            <div class="item1 flex items-start space-x-2">
 
-                    <h3 class="font-bold text-sm">
-                        Everything you need in one place
-                    </h3>
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    03
+                </div>
+
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            03
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Everything you need in one place
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        Stop jumping from one service to another to
+                        communicate, store files, track tasks and share
+                        documents. Manage offers an all-in-one team
+                        productivity solution.</p>
 
                 </div>
 
-                <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
-                    Stop jumping from one service to another to
-                    communicate, store files, track tasks and share
-                    documents. Manage offers an all-in-one team
-                    productivity solution.                    
-                </p>
-
             </div>
+
 
         </div>
 
@@ -200,9 +222,9 @@
 
 
 
-    <!-- Section 3 -->
+    <!-- Section 3 Just have to add Slick.js -->
 
-    <section class='container px-[6%] py-5 mx-auto my-0 space-x-0 space-y-5 flex flex-col items-center justify-between'>
+    <section class='container px-[6%] py-40  mx-auto my-0 space-x-0 space-y-5 flex flex-col items-center justify-between md:px-[10%]'>
 
         <h2 class="font-bold text-center text-darkBlue text-3xl">What they've said.</h2>
         
@@ -226,42 +248,46 @@
             </article>
         </div>
 
-        <button class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+        <button class="shadow-[0px_5px_10px_0px_#f25f3a7d] bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
 
 
     </section>
 
 
-    <!-- Sectino 4 -->
+    <!-- Sectino 4  Done -->
 
-    <section class='container px-[6%] py-20 mx-auto my-0 space-x-0 space-y-6 flex flex-col items-center justify-between bg-brightRed'>
+    <section class='px-[6%] py-12  mx-auto my-0 space-x-0 space-y-6 flex flex-col items-center justify-between bg-brightRed md:flex-row md:px-[10%]'>
 
-        <h2 class="font-bold text-center text-veryLightGray text-3xl">
+        <h2 class="font-bold text-center text-veryLightGray text-3xl md:text-start">
             Simplify how
-            your team works
-            today.
+            your team <br> works today.
         </h2>
 
-        <button class="bg-veryLightGray text-brightRed rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+        <button class=" shadow-[0px_5px_10px_0px_#f25f3a7d] bg-veryLightGray text-brightRed rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
     
     </section>
 
 
-    <!-- Footer -->
+    <!-- Footer Done -->
 
-    <section class='container px-[6%] py-10 mx-auto my-0 space-x-0 space-y-9 flex flex-col items-center justify-between bg-veryDarkBlue'>
+    <section class='px-[6%] py-12  mx-auto my-0 space-x-0 space-y-9 flex flex-col items-center justify-between bg-veryDarkBlue md:flex-row-reverse md:items-start md:space-y-0 md:items-stretch md:px-[10%]'> 
 
         <!-- search -->
-        <div class="search_area">
-            <input class="bg-veryLightGray rounded-full text-xs text-darkGrayishBlue py-3 px-5" type="search" name="search" id="search" placeholder="Updates in your inbox...">
-            
-            <button class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 font-medium text-xs">Go</button>
+        <div class="flex flex-col space-y-2 items-end justify-between">
+
+            <div class="search_area md:flex md:space-x-2">
+                <input class="bg-veryLightGray rounded-full text-xs text-darkGrayishBlue py-3 px-5" type="search" name="search" id="search" placeholder="Updates in your inbox...">
+                
+                <button class=" bg-brightRed text-veryLightGray rounded-full py-3 px-6 font-medium text-xs">Go</button>
+    
+            </div>
+
+            <p class="copyright hidden text-xs text-center text-darkGrayishBlue md:block">Copyright 2020. All Rights Reserved</p>
 
         </div>
-
         <!-- Footer Menu -->
 
-        <div class="footer_menu flex w-[100%] justify-evenly">
+            <div class="footer_menu flex w-[100%] justify-evenly md:w-[40%] md:justify-space-around">
 
             <!-- Left -->
 
@@ -289,7 +315,7 @@
 
         <!-- all the social Icons -->
 
-        <div class="social_icon_container flex justify-between items-center w-[90%]">
+        <div class="social_icon_container flex justify-between items-center w-[90%] md:hidden">
             <img width="30px" src="./images/icon-facebook.svg" alt="facebook">
             <img width="30px" src="./images/icon-youtube.svg" alt="youtube">
             <img width="30px" src="./images/icon-twitter.svg" alt="twitter">
@@ -298,15 +324,24 @@
         </div>
 
         <!-- Logo -->
-        <img src="./images/logo_white.svg" alt="logo">
+        <div class="Footer_Logo flex flex-col justify-between">
+            <img width="100%" src="./images/logo_white.svg" alt="logo">
 
-        <p class="copyright text-xs text-center text-darkGrayishBlue">Copyright 2020. All Rights Reserved</p>
+            <div class="social_icon_container hidden flex flex-row justify-between items-center md:flex space-x-2">
+                <img width="20px" src="./images/icon-facebook.svg" alt="facebook">
+                <img width="20px" src="./images/icon-youtube.svg" alt="youtube">
+                <img width="20px" src="./images/icon-twitter.svg" alt="twitter">
+                <img width="20px" src="./images/icon-pinterest.svg" alt="pinterest">
+                <img width="20px" src="./images/icon-instagram.svg" alt="instagram">
+            </div>
+
+        </div>
+
+        <p class="copyright text-xs text-center text-darkGrayishBlue md:hidden">Copyright 2020. All Rights Reserved</p>
 
     </section>
 
 </body>
 
 </html>
-
-
 
