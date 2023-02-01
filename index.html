@@ -13,6 +13,12 @@
         *, *::after, *::before{
             font-family: 'Be Vietnam Pro', sans-serif;
         }
+        
+        @layer base {
+            html {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
 
     </style>
 <!-- Link Swiper's CSS -->
@@ -57,8 +63,12 @@
 <body>
 
     <!-- NavBar -->
-    <nav class="flex container px-[5%] py-10 items-center justify-between mx-auto md:px-[10%]">
-        
+    <nav class="relative overflow-x-clip flex px-[5%] py-10 items-center justify-between mx-auto md:px-[10%]">
+
+    <!-- Absoulte image Mobile-->
+
+    <img src="./images/bg-tablet-pattern.svg" alt="" class="absolute inset-0 z-[-1] translate-x-[20%] md:hidden">
+
     <div>
         <img src="./images/logo.svg" alt="Logo">
     </div>
@@ -71,8 +81,13 @@
 
 
     <!-- Hero Section Done -->
-    <section class='container px-[6%]  py-10  mx-auto my-0 space-x-0 space-y-0 flex flex-col items-center justify-between md:flex-row-reverse justify-between md:px-[10%] md:py-20'>
+    <section class='relative overflow-x-clip  px-[6%]  py-10  mx-auto my-0 space-x-0 space-y-0 flex flex-col items-center justify-between md:flex-row-reverse justify-between md:px-[10%] md:py-20'>
         
+        <!-- Absoulte image -->
+
+        <img src="./images/bg-tablet-pattern.svg" alt="" class="absolute right-0 bottom-0 z-[-1] translate-x-[50%] md:translate-x-[20%]">
+
+
         <!-- image -->
 
         <div class="analysis_chart md:w-[50%]">
@@ -93,19 +108,18 @@
                 keeping the larger team goals in view.
             </p>
 
-            <button class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d]">Get Started</button>
+            <button class="bg-brightRed text-veryLightGray hover:bg-brightRedLight rounded-full py-3 px-6 my-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d]">Get Started</button>
         </div>
 
     </section>
 
 
     <!-- section 2 Done -->
-    
-    <section class='mx-auto my-0 space-x-0 space-y-0 flex flex-col items-end md:flex-row md:items-start md:container md:px-[4%]'>
 
+    <section class='mx-auto my-0 space-x-0 space-y-0 flex flex-col items-end md:flex-row md:items-start md:px-[4%]'>
         <!-- Text Data 1 -->
 
-        <div class="text_data flex flex-col items-center container px-[6%] py-6 mx-auto space-y-5 md:items-start md:py-0">
+        <div class="text_data flex flex-col items-center px-[6%] py-6 mx-auto space-y-5 md:items-start md:py-0 md:w-[50%]">
 
             <h2 class="font-bold text-center text-darkBlue text-3xl md:text-left">What's different about Manage?</h2>
 
@@ -122,7 +136,7 @@
 
         <!-- Text Data 2 -->
 
-        <div class=" flex flex-col w-[95%] space-y-6">
+        <div class=" flex flex-col w-[95%] space-y-6 md:w-[50%]">
 
             <!-- item1 -->
 
@@ -225,17 +239,24 @@
 
 
 
-    <!-- Section 3 -->
+    <!-- Section 3 slider-one -->
 
-    <section class='container px-[6%] py-20 md:overflow-hidden mx-auto my-0 space-x-0 space-y-5 flex flex-col items-center justify-between md:px-[10%] md:py-40'>
+    <section class=' relative px-[6%] py-10 md:overflow-hidden mx-auto my-0 space-x-0 space-y-5 flex flex-col items-center justify-between md:px-[10%] md:py-40'>
+
+        <!-- Absoulte image Mobile-->
+        
+        <div class="">
+            <img src="./images/bg-tablet-pattern.svg" alt="" class=" absolute left-0 top-0 translate-x-[-40%] z-[-1] hidden md:block">
+        </div>
+
 
         <h2 class="font-bold text-center text-darkBlue text-3xl">What they've said.</h2>
         
-        <div class="testimonials flex w-[100vw] overflow-scroll md:overflow-hidden">
+        <div class="testimonials flex w-[100vw] overflow-hidden cursor-grab  md:cursor-default">
 
             <!-- First -->
 
-            <article class="testimonial_1 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+            <article id="testimonial_1" class="testimonial_1 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
 
                 <img class="translate-y-[-50%]" src="./images/avatar-ali.png" width="70px" alt="Women">
                 
@@ -253,7 +274,7 @@
 
             <!-- second -->
 
-            <article class="testimonial_1 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+            <article id="testimonial_2" class="testimonial_2 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
 
                 <img class="translate-y-[-50%]" src="./images/avatar-anisha.png" width="70px" alt="Women">
                 
@@ -270,7 +291,24 @@
 
             <!-- Third -->
             
-            <article class="testimonial_1 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+            <article id="testimonial_3"  class="testimonial_3 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+
+                <img class="translate-y-[-50%]" src="./images/avatar-richard.png" width="70px" alt="Women">
+                
+                <h3 class="font-bold text-center text-darkBlue">Ali Bravo</h3>
+
+                <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 ">
+                        "We have been able to cancel so many
+                        other subscriptions since using Manage.
+                        There is no more cross-channel confusion
+                        and everyone is much more focused."
+                </p>
+
+            </article>
+
+            <!-- Fourth -->
+
+            <article id="testimonial_4"  class="testimonial_4 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:hidden">
 
                 <img class="translate-y-[-50%]" src="./images/avatar-richard.png" width="70px" alt="Women">
                 
@@ -287,7 +325,19 @@
 
         </div>
 
-        <button class="shadow-[0px_5px_10px_0px_#f25f3a7d] bg-brightRed text-veryLightGray rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+        <!-- Pagination -->
+
+        <div class="pagination_for_testimonials md:hidden">
+            <span class="text-5xl text-brightRed cursor-pointer leading-[0]" onclick="ChangeSlide(1)">.</span>
+
+            <span class ="text-5xl cursor-pointe  leading-[0]"  onclick="ChangeSlide(2)">.</span>
+
+            <span class="text-5xl cursor-pointer leading-[0]"  onclick="ChangeSlide(3)">.</span>
+
+            <span class="text-5xl cursor-pointer leading-[0]"  onclick="ChangeSlide(4)">.</span>
+        </div>
+
+        <button class="shadow-[0px_5px_10px_0px_#f25f3a7d] hover:bg-brightRedLight bg-brightRed text-veryLightGray rounded-full py-3 px-6 font-medium text-xs">Get Started</button>
 
 
     </section>
@@ -295,14 +345,18 @@
 
     <!-- Sectino 4  Done -->
 
-    <section class='px-[6%] py-12  mx-auto my-0 space-x-0 space-y-6 flex flex-col items-center justify-between bg-brightRed md:flex-row md:px-[10%]'>
+    <section class='relative px-[6%] py-20  mx-auto my-0 space-x-0 space-y-6 flex flex-col items-center justify-between bg-brightRed md:flex-row md:px-[10%]'>
 
         <h2 class="font-bold text-center text-veryLightGray text-3xl md:text-start">
             Simplify how
             your team <br> works today.
         </h2>
 
-        <button class=" shadow-[0px_5px_10px_0px_#f25f3a7d] bg-veryLightGray text-brightRed rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+        <button class=" shadow-[0px_5px_10px_0px_#f25f3a7d] hover:bg-veryLightGray bg-veryPaleRed text-brightRed rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+
+        <!-- Absolute svg -->
+
+        <img src="./images/bg-simplify-section-mobile.svg" width="80px" alt="pattern" class="absolute left-0 top-0 bottom-0 md:hidden">
     
     </section>
 
@@ -315,11 +369,12 @@
         <div class="flex flex-col space-y-2 items-end justify-between">
 
             <div class="search_area md:flex md:space-x-2">
-                <input class="bg-veryLightGray rounded-full text-xs text-darkGrayishBlue py-3 px-5" type="search" name="search" id="search" placeholder="Updates in your inbox...">
+                <input class="bg-veryLightGray rounded-full text-xs text-darkGrayishBlue py-3 px-5 text-brightRed focus:border-brightRed" type="search" name="search" id="search" placeholder="Updates in your inbox...">
                 
-                <button class=" bg-brightRed text-veryLightGray rounded-full py-3 px-6 font-medium text-xs">Go</button>
-    
+                <button class=" bg-brightRed text-veryLightGray hover:bg-brightRedLight rounded-full py-3 px-6 font-medium text-xs">Go</button>
             </div>
+
+            <p class="text-brightRed font-normal text-xs italic self-start px-5 pb-5">Please Enter a vaild email</p>
 
             <p class="copyright hidden text-xs text-center text-darkGrayishBlue md:block">Copyright 2020. All Rights Reserved</p>
 
@@ -332,10 +387,10 @@
 
             <div class="left_menu flex flex-col items-start space-y-2">
 
-                <a href="#" class="footer_nav_link1 text-veryLightGray text-xs">Home</a>
-                <a href="#" class="footer_nav_link2 text-veryLightGray text-xs">Pricing</a>
-                <a href="#" class="footer_nav_link3 text-veryLightGray text-xs">Products</a>
-                <a href="#" class="footer_nav_link4 text-veryLightGray text-xs">About Us</a>
+                <a href="#" class="footer_nav_link1 text-veryLightGray text-xs hover:text-brightRed">Home</a>
+                <a href="#" class="footer_nav_link2 text-veryLightGray text-xs hover:text-brightRed">Pricing</a>
+                <a href="#" class="footer_nav_link3 text-veryLightGray text-xs hover:text-brightRed">Products</a>
+                <a href="#" class="footer_nav_link4 text-veryLightGray text-xs hover:text-brightRed">About Us</a>
 
             </div>
 
@@ -344,9 +399,9 @@
 
             <div class="right_menu flex flex-col items-start space-y-2">
 
-                <a href="#" class="footer_nav_link5 text-veryLightGray text-xs">Careers</a>
-                <a href="#" class="footer_nav_link6 text-veryLightGray text-xs">Community</a>
-                <a href="#" class="footer_nav_link7 text-veryLightGray text-xs">Privacy Policy</a>
+                <a href="#" class="footer_nav_link5 text-veryLightGray text-xs hover:text-brightRed">Careers</a>
+                <a href="#" class="footer_nav_link6 text-veryLightGray text-xs hover:text-brightRed">Community</a>
+                <a href="#" class="footer_nav_link7 text-veryLightGray text-xs hover:text-brightRed">Privacy Policy</a>
 
             </div>
 
@@ -355,11 +410,16 @@
         <!-- all the social Icons -->
 
         <div class="social_icon_container flex justify-between items-center w-[90%] md:hidden">
-            <img width="30px" src="./images/icon-facebook.svg" alt="facebook">
-            <img width="30px" src="./images/icon-youtube.svg" alt="youtube">
-            <img width="30px" src="./images/icon-twitter.svg" alt="twitter">
-            <img width="30px" src="./images/icon-pinterest.svg" alt="pinterest">
-            <img width="30px" src="./images/icon-instagram.svg" alt="instagram">
+            <img class="cursor-pointer" width="30px" src="./images/icon-facebook.svg" alt="facebook"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-youtube.svg" alt="youtube"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-twitter.svg" alt="twitter"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-pinterest.svg" alt="pinterest"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-instagram.svg" alt="instagram"/>
+
         </div>
 
         <!-- Logo -->
@@ -379,6 +439,28 @@
         <p class="copyright text-xs text-center text-darkGrayishBlue md:hidden">Copyright 2020. All Rights Reserved</p>
 
     </section>
+
+
+    <script>
+
+        // Slider Code custom
+        
+        var testimonialSlider = 1;
+        var allspans = document.querySelectorAll(".pagination_for_testimonials > span");
+
+        function ChangeSlide(towhich) {
+            const element_id = `#testimonial_${towhich}`.toString();
+            const element = document.querySelector(element_id);
+            if(towhich !== testimonialSlider) {
+                allspans[testimonialSlider - 1].classList.remove('text-brightRed');
+                allspans[towhich - 1].classList.add("text-brightRed");
+                testimonialSlider = towhich;
+            }
+
+            element.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+        }
+
+    </script>
 
 
 </body>
