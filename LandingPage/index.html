@@ -1,101 +1,572 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Manage landing page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <style>
+        *, *::after, *::before{
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        
+        @layer base {
+            html {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        /* Hamburger Menu Style */
+
+        
+    /* Menu Button 1 */
+    .menu-btn-1 {
+        height: 32px;
+        width: 40px;
+        cursor: pointer;
+        transform: scale(0.6);
+    }
+
+        .menu-btn-1 span,
+        .menu-btn-1 span::before,
+        .menu-btn-1 span::after {
+            background: black;
+            border-radius: 3px;
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 6px;         
+            margin-top: 13px; 
+
+            -webkit-transition: .3s ease-in-out;
+            -moz-transition: .3s ease-in-out;
+            -o-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-1 span::before {
+            margin-top:-12px;
+        }
+
+        .menu-btn-1 span::after {
+            margin-top:12px;
+        }
+
+        .menu-btn-1.active span {
+            background: transparent;
+        }
+
+        .menu-btn-1.active span::before {
+            margin-top: 0;
+
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .menu-btn-1.active span::after {
+            margin-top: 0;
+
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+
+
+    </style>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    
+
+
+  <title>Manage</title>
+
+
+    <script>
+        tailwind.config = {
+        theme: {
+            screens: {
+                sm: "480px",
+                md: "768px",
+                lg: "976px", 
+                xl: "1440px"
+            },
+            extend: {
+
+            colors: {
+                brightRed: 'hsl(12, 88%, 59%)',
+                brightRedLight: 'hsl(12, 88%, 69%)',
+                brightRedSupLight: 'hsl(12, 88%, 95%)',
+                darkBlue: 'hsl(228, 39%, 23%)',
+                darkGrayishBlue: 'hsl(227, 12%, 61%)',
+                veryDarkBlue: 'hsl(233, 12%, 13%)',
+                veryPaleRed: 'hsl(13, 100%, 96%)',
+                veryLightGray: 'hsl(0, 0%, 98%)',
+                backgroudOverlay: 'hsla(0, 0%, 0%, 0.3)',
+                },
+            }
+        }
+        }
+    </script>
+
 </head>
+
 <body>
 
-  Pricing
-  Product
-  About Us
-  Careers
-  Community
 
-  Get Started
+    <!-- Mobile Navition -->
+    <section class='fixed mobile_nav_fixed inset-0 z-[10] overflow-x-clip px-[5%] py-10 mx-auto md:px-[10%] bg-backgroudOverlay hidden md:hidden'>
 
-  Bring everyone together to build better products.
+        <div class="mobile_nav_container w-[90%] rounded translate-y-1/3 mx-auto absolute top-0 left-0 right-0 bg-white flex flex-col items-center py-9 space-y-5">
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Pricing</p></a>
 
-  Manage makes it simple for software teams to plan day-to-day 
-  tasks while keeping the larger team goals in view.
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Product</p></a>
 
-  Get Started
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">About Us</p></a>
 
-  What’s different about Manage?
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Careers</p></a>
 
-  Manage provides all the functionality your team needs, without 
-  the complexity. Our software is tailor-made for modern digital 
-  product teams. 
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Community</p></a>
 
-  01
-  Track company-wide progress
-  See how your day-to-day tasks fit into the wider vision. Go from 
-  tracking progress at the milestone level all the way done to the 
-  smallest of details. Never lose sight of the bigger picture again.
+        </div>
 
-  02
-  Advanced built-in reports
-  Set internal delivery estimates and track progress toward company 
-  goals. Our customisable dashboard helps you build out the reports 
-  you need to keep key stakeholders informed.
+    </section>
 
-  03
-  Everything you need in one place
-  Stop jumping from one service to another to communicate, store files, 
-  track tasks and share documents. Manage offers an all-in-one team 
-  productivity solution.
 
-  What they’ve said
+    <!-- NavBar -->
+    <nav class="relative overflow-x-clip flex px-[5%] py-10 items-center justify-between mx-auto md:px-[10%]">
 
-  Anisha Li
-  “Manage has supercharged our team’s workflow. The ability to maintain 
-  visibility on larger milestones at all times keeps everyone motivated.”
+    <!-- Absoulte image Mobile-->
 
-  Ali Bravo
-  “We have been able to cancel so many other subscriptions since using 
-  Manage. There is no more cross-channel confusion and everyone is much 
-  more focused.”
+    <img src="./images/bg-tablet-pattern.svg" alt="" class="absolute inset-0 z-[-1] translate-x-[20%] md:hidden">
 
-  Richard Watts
-  “Manage allows us to provide structure and process. It keeps us organized 
-  and focused. I can’t stop recommending them to everyone I talk to!”
+    <div class="relative z-[11]">
+        <img src="./images/logo.svg" alt="Logo">
+    </div>
 
-  Shanai Gough
-  “Their software allows us to track, manage and collaborate on our projects 
-  from anywhere. It keeps the whole team in-sync without being intrusive.”
 
-  Get Started
+    <div class="links_span flex justify-between items-center space-x-4 hidden md:flex ">
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Pricing</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Product</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">About Us</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Careers</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Community</p>
+    </div>
+    
+    <button class="bg-brightRed text-veryLightGray hidden hover:bg-brightRedLight rounded-full py-3 px-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d] md:block">Get Started</button>
 
-  Simplify how your team works today.
-  Get Started
+    <div class="hamburgerMenu md:hidden relative z-[11]">
+        <div class="menu-btn-1" onclick="mobileNavHandler(this)">
+            <span></span>
+        </div>
+    </div>
 
-  Home
-  Pricing
-  Products
-  About Us
-  Careers
-  Community
-  Privacy Policy
+    </nav>
 
-  Updates in your inbox…
-  Go
 
-  Copyright 2020. All Rights Reserved
+    <!-- Hero Section Done -->
+    <section class='relative overflow-x-clip  px-[6%]  py-10  mx-auto my-0 space-x-0 space-y-0 flex flex-col items-center justify-between md:flex-row-reverse justify-between md:px-[10%] md:py-20'>
+        
+        <!-- Absoulte image -->
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <img src="./images/bg-tablet-pattern.svg" alt="" class="absolute right-0 bottom-0 z-[-1] translate-x-[50%] md:translate-x-[20%]">
+
+
+        <!-- image -->
+
+        <div class="analysis_chart md:w-[50%]">
+            
+            <img src="./images/illustration-intro.svg" alt="chart">
+
+        </div>
+
+        <!-- Text Data -->
+
+        <div class="analysis_text_data flex flex-col items-center md:items-start md:w-[50%]">
+
+            <h2 class="font-bold text-center text-darkBlue text-3xl md:text-left">Bring everyone<br> togather to build better products.</h2>
+
+            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 md:text-left">
+                Manage makes it simple for software<br>
+                teams to plan day-to-day tasks while<br>
+                keeping the larger team goals in view.
+            </p>
+
+            <button class="bg-brightRed text-veryLightGray hover:bg-brightRedLight rounded-full py-3 px-6 my-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d]">Get Started</button>
+        </div>
+
+    </section>
+
+
+    <!-- section 2 Done -->
+
+    <section class='mx-auto my-0 space-x-0 space-y-0 flex flex-col items-end md:flex-row md:items-start md:px-[4%]'>
+        <!-- Text Data 1 -->
+
+        <div class="text_data flex flex-col items-center px-[6%] py-6 mx-auto space-y-5 md:items-start md:py-0 md:w-[50%]">
+
+            <h2 class="font-bold text-center text-darkBlue text-3xl md:text-left">What's different about Manage?</h2>
+
+            <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 md:text-left">
+                Manage provides all the functionality your
+                team needs, without the complexity. Our
+                software is tailor-made for modern digital
+                product teams.
+            </p>
+
+            
+
+        </div>
+
+        <!-- Text Data 2 -->
+
+        <div class=" flex flex-col w-[95%] space-y-6 md:w-[50%]">
+
+            <!-- item1 -->
+
+            <div class="item1 flex items-start space-x-2">
+
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    01
+                </div>
+
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            01
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Track company-wide progress
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        See how your day-to-day tasks fit into the wider
+                        vision. Go from tracking progress at the milestone
+                        level all the way done to the smallest of details.
+                        Never lose sight of the bigger picture again.</p>
+    
+                </div>
+
+            </div>
+
+            <!-- item2 -->
+
+            <div class="item1 flex items-start space-x-2">
+
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    02
+                </div>
+
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            02
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Advanced built-in reports
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        Set internal delivery estimates and track progress
+                        toward company goals. Our customisable
+                        dashboard helps you build out the reports you
+                        need to keep key stakeholders informed.</p>
+    
+                </div>
+
+            </div>
+
+
+            <!-- item3 -->
+
+            <div class="item1 flex items-start space-x-2">
+
+                <div class="bg-brightRed hidden text-veryLightGray rounded-full py-1 px-4 text-sm font-bold md:block">
+                    03
+                </div>
+
+                <div>
+                    <div class="sequence_and_data flex items-center bg-brightRedSupLight justify-start space-x-2 rounded-l-full md:bg-white md:space-x-0">
+                    
+                        <div class="bg-brightRed text-veryLightGray rounded-full py-3 px-6 text-sm font-bold md:hidden">
+                            03
+                        </div>
+    
+                        <h3 class="font-bold text-sm">
+                            Everything you need in one place
+                        </h3>
+    
+                    </div>
+    
+                    <p class="text-start my-2 text-darkGrayishBlue text-sm leading-6">
+                        Stop jumping from one service to another to
+                        communicate, store files, track tasks and share
+                        documents. Manage offers an all-in-one team
+                        productivity solution.</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Section 3 slider-one -->
+
+    <section class=' relative px-[6%] py-10 md:overflow-hidden mx-auto my-0 space-x-0 space-y-5 flex flex-col items-center justify-between md:px-[10%] md:py-40'>
+
+        <!-- Absoulte image Mobile-->
+        
+        <div class="">
+            <img src="./images/bg-tablet-pattern.svg" alt="" class=" absolute left-0 top-0 translate-x-[-40%] z-[-1] hidden md:block">
+        </div>
+
+
+        <h2 class="font-bold text-center text-darkBlue text-3xl">What they've said.</h2>
+        
+        <div class="testimonials flex w-[100vw] overflow-hidden cursor-grab  md:cursor-default">
+
+            <!-- First -->
+
+            <article id="testimonial_1" class="testimonial_1 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+
+                <img class="translate-y-[-50%]" src="./images/avatar-ali.png" width="70px" alt="Women">
+                
+                <h3 class="font-bold text-center text-darkBlue">Ali Bravo</h3>
+
+                <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 ">
+                        "We have been able to cancel so many
+                        other subscriptions since using Manage.
+                        There is no more cross-channel confusion
+                        and everyone is much more focused."
+                </p>
+
+            </article>
+
+
+            <!-- second -->
+
+            <article id="testimonial_2" class="testimonial_2 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+
+                <img class="translate-y-[-50%]" src="./images/avatar-anisha.png" width="70px" alt="Women">
+                
+                <h3 class="font-bold text-center text-darkBlue">Ali Bravo</h3>
+
+                <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 ">
+                        "We have been able to cancel so many
+                        other subscriptions since using Manage.
+                        There is no more cross-channel confusion
+                        and everyone is much more focused."
+                </p>
+
+            </article>
+
+            <!-- Third -->
+            
+            <article id="testimonial_3"  class="testimonial_3 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:min-w-[33%]">
+
+                <img class="translate-y-[-50%]" src="./images/avatar-richard.png" width="70px" alt="Women">
+                
+                <h3 class="font-bold text-center text-darkBlue">Ali Bravo</h3>
+
+                <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 ">
+                        "We have been able to cancel so many
+                        other subscriptions since using Manage.
+                        There is no more cross-channel confusion
+                        and everyone is much more focused."
+                </p>
+
+            </article>
+
+            <!-- Fourth -->
+
+            <article id="testimonial_4"  class="testimonial_4 flex flex-col items-center space-y-5 bg-veryLightGray p-6 mt-10 min-w-full md:hidden">
+
+                <img class="translate-y-[-50%]" src="./images/avatar-richard.png" width="70px" alt="Women">
+                
+                <h3 class="font-bold text-center text-darkBlue">Ali Bravo</h3>
+
+                <p class="text-center my-2 text-darkGrayishBlue text-sm leading-6 ">
+                        "We have been able to cancel so many
+                        other subscriptions since using Manage.
+                        There is no more cross-channel confusion
+                        and everyone is much more focused."
+                </p>
+
+            </article>
+
+        </div>
+
+        <!-- Pagination -->
+
+        <div class="pagination_for_testimonials md:hidden">
+            <span class="text-5xl text-brightRed cursor-pointer leading-[0]" onclick="ChangeSlide(1)">.</span>
+
+            <span class ="text-5xl cursor-pointe  leading-[0]"  onclick="ChangeSlide(2)">.</span>
+
+            <span class="text-5xl cursor-pointer leading-[0]"  onclick="ChangeSlide(3)">.</span>
+
+            <span class="text-5xl cursor-pointer leading-[0]"  onclick="ChangeSlide(4)">.</span>
+        </div>
+
+        <button class="shadow-[0px_5px_10px_0px_#f25f3a7d] hover:bg-brightRedLight bg-brightRed text-veryLightGray rounded-full py-3 px-6 font-medium text-xs">Get Started</button>
+
+
+    </section>
+
+
+    <!-- Sectino 4  Done -->
+
+    <section class='relative px-[6%] py-20  mx-auto my-0 space-x-0 space-y-6 flex flex-col items-center justify-between bg-brightRed md:flex-row md:px-[10%]'>
+
+        <h2 class="font-bold text-center text-veryLightGray text-3xl md:text-start">
+            Simplify how
+            your team <br> works today.
+        </h2>
+
+        <button class=" shadow-[0px_5px_10px_0px_#f25f3a7d] hover:bg-veryLightGray bg-veryPaleRed text-brightRed rounded-full py-3 px-6 my-6 font-medium text-xs">Get Started</button>
+
+        <!-- Absolute svg -->
+
+        <img src="./images/bg-simplify-section-mobile.svg" width="80px" alt="pattern" class="absolute left-0 top-0 bottom-0 md:hidden">
+    
+    </section>
+
+
+    <!-- Footer Done -->
+
+    <section class='px-[6%] py-12  mx-auto my-0 space-x-0 space-y-9 flex flex-col items-center justify-between bg-veryDarkBlue md:flex-row-reverse md:items-start md:space-y-0 md:items-stretch md:px-[10%]'> 
+
+        <!-- search -->
+        <div class="flex flex-col space-y-2 items-end justify-between">
+
+            <div class="search_area md:flex md:space-x-2">
+                <input class="bg-veryLightGray rounded-full text-xs text-darkGrayishBlue py-3 px-5 text-brightRed focus:border-brightRed" type="search" name="search" id="search" placeholder="Updates in your inbox...">
+                
+                <button class=" bg-brightRed text-veryLightGray hover:bg-brightRedLight rounded-full py-3 px-6 font-medium text-xs">Go</button>
+            </div>
+
+            <p class="text-brightRed font-normal text-xs italic self-start px-5 pb-5">Please Enter a vaild email</p>
+
+            <p class="copyright hidden text-xs text-center text-darkGrayishBlue md:block">Copyright 2020. All Rights Reserved</p>
+
+        </div>
+        <!-- Footer Menu -->
+
+            <div class="footer_menu flex w-[100%] justify-evenly md:w-[40%] md:justify-space-around">
+
+            <!-- Left -->
+
+            <div class="left_menu flex flex-col items-start space-y-2">
+
+                <a href="#" class="footer_nav_link1 text-veryLightGray text-xs hover:text-brightRed">Home</a>
+                <a href="#" class="footer_nav_link2 text-veryLightGray text-xs hover:text-brightRed">Pricing</a>
+                <a href="#" class="footer_nav_link3 text-veryLightGray text-xs hover:text-brightRed">Products</a>
+                <a href="#" class="footer_nav_link4 text-veryLightGray text-xs hover:text-brightRed">About Us</a>
+
+            </div>
+
+
+            <!-- Right -->
+
+            <div class="right_menu flex flex-col items-start space-y-2">
+
+                <a href="#" class="footer_nav_link5 text-veryLightGray text-xs hover:text-brightRed">Careers</a>
+                <a href="#" class="footer_nav_link6 text-veryLightGray text-xs hover:text-brightRed">Community</a>
+                <a href="#" class="footer_nav_link7 text-veryLightGray text-xs hover:text-brightRed">Privacy Policy</a>
+
+            </div>
+
+        </div>
+
+        <!-- all the social Icons -->
+
+        <div class="social_icon_container flex justify-between items-center w-[90%] md:hidden">
+            <img class="cursor-pointer" width="30px" src="./images/icon-facebook.svg" alt="facebook"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-youtube.svg" alt="youtube"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-twitter.svg" alt="twitter"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-pinterest.svg" alt="pinterest"/>
+
+            <img class="cursor-pointer" width="30px" src="./images/icon-instagram.svg" alt="instagram"/>
+
+        </div>
+
+        <!-- Logo -->
+        <div class="Footer_Logo flex flex-col justify-between">
+            <img width="100%" src="./images/logo_white.svg" alt="logo">
+
+            <div class="social_icon_container hidden flex flex-row justify-between items-center md:flex space-x-2">
+                <img width="20px" src="./images/icon-facebook.svg" alt="facebook">
+                <img width="20px" src="./images/icon-youtube.svg" alt="youtube">
+                <img width="20px" src="./images/icon-twitter.svg" alt="twitter">
+                <img width="20px" src="./images/icon-pinterest.svg" alt="pinterest">
+                <img width="20px" src="./images/icon-instagram.svg" alt="instagram">
+            </div>
+
+        </div>
+
+        <p class="copyright text-xs text-center text-darkGrayishBlue md:hidden">Copyright 2020. All Rights Reserved</p>
+
+    </section>
+
+
+    <script>
+
+        // Slider Code custom
+        
+        var testimonialSlider = 1;
+        var allspans = document.querySelectorAll(".pagination_for_testimonials > span");
+
+        function ChangeSlide(towhich) {
+            const element_id = `#testimonial_${towhich}`.toString();
+            const element = document.querySelector(element_id);
+            if(towhich !== testimonialSlider) {
+                allspans[testimonialSlider - 1].classList.remove('text-brightRed');
+                allspans[towhich - 1].classList.add("text-brightRed");
+                testimonialSlider = towhich;
+            }
+
+            element.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+        }
+
+
+        // Mobile Navigation
+        const mobileNavHandler = (elementMenu) => {
+            const mobileDeviceNav = document.querySelector('.mobile_nav_fixed');
+            mobileDeviceNav.classList.toggle('hidden');
+            elementMenu.classList.toggle("active");
+        };
+
+
+    </script>
+
+
 </body>
+
 </html>
+
