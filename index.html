@@ -20,6 +20,66 @@
             }
         }
 
+        /* Hamburger Menu Style */
+
+        
+    /* Menu Button 1 */
+    .menu-btn-1 {
+        height: 32px;
+        width: 40px;
+        cursor: pointer;
+        transform: scale(0.6);
+    }
+
+        .menu-btn-1 span,
+        .menu-btn-1 span::before,
+        .menu-btn-1 span::after {
+            background: black;
+            border-radius: 3px;
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 6px;         
+            margin-top: 13px; 
+
+            -webkit-transition: .3s ease-in-out;
+            -moz-transition: .3s ease-in-out;
+            -o-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .menu-btn-1 span::before {
+            margin-top:-12px;
+        }
+
+        .menu-btn-1 span::after {
+            margin-top:12px;
+        }
+
+        .menu-btn-1.active span {
+            background: transparent;
+        }
+
+        .menu-btn-1.active span::before {
+            margin-top: 0;
+
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .menu-btn-1.active span::after {
+            margin-top: 0;
+
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+
+
     </style>
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -52,6 +112,7 @@
                 veryDarkBlue: 'hsl(233, 12%, 13%)',
                 veryPaleRed: 'hsl(13, 100%, 96%)',
                 veryLightGray: 'hsl(0, 0%, 98%)',
+                backgroudOverlay: 'hsla(0, 0%, 0%, 0.3)',
                 },
             }
         }
@@ -62,6 +123,26 @@
 
 <body>
 
+
+    <!-- Mobile Navition -->
+    <section class='fixed mobile_nav_fixed inset-0 z-[10] overflow-x-clip px-[5%] py-10 mx-auto md:px-[10%] bg-backgroudOverlay hidden md:hidden'>
+
+        <div class="mobile_nav_container w-[90%] rounded translate-y-1/3 mx-auto absolute top-0 left-0 right-0 bg-white flex flex-col items-center py-9 space-y-5">
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Pricing</p></a>
+
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Product</p></a>
+
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">About Us</p></a>
+
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Careers</p></a>
+
+            <a href="#"><p class="text-darkBlue text-xs leading-6 cursor-pointer text-sm font-bold">Community</p></a>
+
+        </div>
+
+    </section>
+
+
     <!-- NavBar -->
     <nav class="relative overflow-x-clip flex px-[5%] py-10 items-center justify-between mx-auto md:px-[10%]">
 
@@ -69,12 +150,25 @@
 
     <img src="./images/bg-tablet-pattern.svg" alt="" class="absolute inset-0 z-[-1] translate-x-[20%] md:hidden">
 
-    <div>
+    <div class="relative z-[11]">
         <img src="./images/logo.svg" alt="Logo">
     </div>
 
-    <div class="hamburgerMenu">
-        <img src="./images/icon-hamburger.svg" alt="hamburger">
+
+    <div class="links_span flex justify-between items-center space-x-4 hidden md:flex ">
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Pricing</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Product</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">About Us</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Careers</p>
+        <p class="text-darkBlue text-xs leading-6 cursor-pointer hover:text-darkGrayishBlue lg:text-sm">Community</p>
+    </div>
+    
+    <button class="bg-brightRed text-veryLightGray hidden hover:bg-brightRedLight rounded-full py-3 px-6 font-medium text-xs shadow-[0px_5px_10px_0px_#f25f3a7d] md:block">Get Started</button>
+
+    <div class="hamburgerMenu md:hidden relative z-[11]">
+        <div class="menu-btn-1" onclick="mobileNavHandler(this)">
+            <span></span>
+        </div>
     </div>
 
     </nav>
@@ -459,6 +553,15 @@
 
             element.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
         }
+
+
+        // Mobile Navigation
+        const mobileNavHandler = (elementMenu) => {
+            const mobileDeviceNav = document.querySelector('.mobile_nav_fixed');
+            mobileDeviceNav.classList.toggle('hidden');
+            elementMenu.classList.toggle("active");
+        };
+
 
     </script>
 
