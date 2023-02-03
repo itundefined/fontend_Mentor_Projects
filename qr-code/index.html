@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <!-- Font -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+    *, *::after, *::before{
+      font-family: 'Outfit', sans-serif;
+    }
+
+    p{
+      font-size: 15px;
+    }
+    
+  </style>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      screens:{
+        sm: '375px',
+        md: '768px',
+        lg: '976',
+        xl: '1440px'
+      },
+
+      extend: {
+        colors: {
+          White: 'hsl(0, 0%, 100%)',
+          Light_gray: 'hsl(212, 45%, 89%)',
+          Grayish_blue: 'hsl(220, 15%, 55%)',
+          Dark_blue: 'hsl(218, 44%, 22%)',
+        }
+      }
+    }
+  }
+</script>
+
+</head>
+<body class="bg-Light_gray flex items-center h-[100vh]">
+
+  <div class="card w-[375px] bg-white mx-auto p-4 rounded-[15px] space-y-4 pb-9 flex flex-col items-center " role="qr-code scanner main" aria-roledescription="It is qr-code scanner, Anybody can scan it and redirect to frontend-mentor website">
+
+    <img class="mb-6 rounded-lg text-center" src="./images/qrCode.png" alt="qr-code">
+
+    <div class="textdata space-y-4 px-3">
+      <h1 class="text-center text-xl font-bold text-Dark_blue ">Improve your front-end skills by building projects</h1>
+
+      <p class="text-center text-Grayish_blue">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+    </div>
+    
+  </div>
+
+</body>
+</html>
