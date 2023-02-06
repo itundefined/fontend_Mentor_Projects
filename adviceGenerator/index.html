@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+
+        screens:{
+          sm: '375px',
+          md: '768px',
+          lg: '1440px',
+        },
+
+        extend: {
+          colors: {
+            LightCyan: 'hsl(193, 38%, 86%)',
+            NeonGreen: 'hsl(150, 100%, 66%)',
+            GrayishBlue: 'hsl(217, 19%, 38%)',
+            DarkGrayishBlue: 'hsl(217, 19%, 24%)',
+            DarkBlue: 'hsl(218, 23%, 16%)',
+
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    *, *::after, *::before{
+      font-family: 'Manrope', sans-serif;
+    }
+
+    q{
+      font-size: 28px;
+    }
+
+  </style>
+
+  <title>Frontend Mentor | Advice generator app</title>
+
+</head>
+<body class="flex items-center justify-center bg-DarkBlue h-[100vh] overflow-x-none">
+
+  <section class="bg-DarkGrayishBlue flex flex-col items-center justify-center space-y-4 pt-9 px-4 w-[90%] mx-auto rounded-xl md:w-[50%] md:px-9 md:space-y-7" role="main" aria-roledescription="main section">
+
+    <p class="Advice_No uppercase text-NeonGreen font-normal text-center tracking-[.25em] text-sm">advice #<span></span></p>
+
+    <p class="text-LightCyan text-center font-bold"><q class="animate-pulse">Loading</q></p>
+
+    <img class="md:hidden w-[80%]" src="./images/pattern-divider-mobile.svg" alt="divider">
+    <img class="hidden md:block w-[80%]" src="./images/pattern-divider-desktop.svg" alt="divider">
+
+    <div class="diceWrapper p-4 bg-NeonGreen rounded-full translate-y-1/2 cursor-pointer md:hover:shadow-[0px_0px_20px_0px_#52ffa8]" onclick="ChangeAdvice()">
+      <img class="diceImage animate-spin" src="./images/icon-dice.svg" alt="dice button">
+    </div>
+
+  </section>
+
+
+  <script defer>
+
+    let lastNo = localStorage.getItem('last_advice_codeoneb');
+    const lastAdivceId = localStorage.getItem('last_advice_id');
+    const adivceNoElement = document.querySelector("p.Advice_No > span");
+    const adviceElement = document.querySelector("q");
+    const dice = document.querySelector(".diceImage");
+    let requestOptions = { method: 'GET', redirect: 'follow' };
+
+
+
+    const ChangeAdvice = async () => { 
+      dice.classList.add("animate-spin");
+      adviceElement.classList.add("animate-pulse");
+
+      try {
+          let advices = await fetch("https://api.adviceslip.com/advice", requestOptions);  
+          let data = await advices.json();
+          lastNo++;
+          adivceNoElement.innerText = lastNo;
+          adviceElement.innerText = data.slip.advice;
+          localStorage.setItem('last_advice_codeoneb', lastNo);
+          localStorage.setItem('last_advice_id', data.slip.id);          
+          dice.classList.remove("animate-spin");
+          adviceElement.classList.remove("animate-pulse");
+          
+      } catch (error){
+        console.log(`There is an server error please report: ${error}`);
+      }
+     }
+
+
+     window.addEventListener("load", async () => {
+        if(lastNo === null) {
+          adivceNoElement.innerText = 0;
+          return;
+        }
+        
+        adivceNoElement.innerText = lastNo;
+
+      try {
+          let advices = await fetch(`https://api.adviceslip.com/advice/${lastAdivceId}`, requestOptions);  
+          let data = await advices.json();
+          adviceElement.innerText = data.slip.advice;
+          adviceElement.classList.remove("animate-pulse");
+          dice.classList.remove("animate-spin");
+
+      } catch (error){
+        console.log(`There is an server error please report: ${error}`);
+      }
+
+
+     })
+
+
+  </script>
+
+
+
+</body>
+</html>
