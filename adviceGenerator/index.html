@@ -72,15 +72,15 @@
 
   <script defer>
 
-    window.addEventListener("load", async () => {
-        let lastNo = localStorage.getItem('last_advice_codeoneb');
-      const lastAdivceId = localStorage.getItem('last_advice_id');
-      const adivceNoElement = document.querySelector("p.Advice_No > span");
-      const adviceElement = document.querySelector("q");
-      const dice = document.querySelector(".diceImage");
-      let requestOptions = { method: 'GET', redirect: 'follow' };
+    let lastNo = localStorage.getItem('last_advice_codeoneb');
+    const lastAdivceId = localStorage.getItem('last_advice_id');
+    const adivceNoElement = document.querySelector("p.Advice_No > span");
+    const adviceElement = document.querySelector("q");
+    const dice = document.querySelector(".diceImage");
+    let requestOptions = { method: 'GET', redirect: 'follow' };
 
-      
+
+    window.addEventListener("load", async () => {
         if(lastNo === null || lastAdivceId === null) {
           adivceNoElement.innerText = 0;
           adviceElement.innerText = "spin the dice...";
