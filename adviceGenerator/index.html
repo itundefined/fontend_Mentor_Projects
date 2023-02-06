@@ -72,12 +72,38 @@
 
   <script defer>
 
-    let lastNo = localStorage.getItem('last_advice_codeoneb');
-    const lastAdivceId = localStorage.getItem('last_advice_id');
-    const adivceNoElement = document.querySelector("p.Advice_No > span");
-    const adviceElement = document.querySelector("q");
-    const dice = document.querySelector(".diceImage");
-    let requestOptions = { method: 'GET', redirect: 'follow' };
+    window.addEventListener("load", async () => {
+        let lastNo = localStorage.getItem('last_advice_codeoneb');
+      const lastAdivceId = localStorage.getItem('last_advice_id');
+      const adivceNoElement = document.querySelector("p.Advice_No > span");
+      const adviceElement = document.querySelector("q");
+      const dice = document.querySelector(".diceImage");
+      let requestOptions = { method: 'GET', redirect: 'follow' };
+
+      
+        if(lastNo === null || lastAdivceId === null) {
+          adivceNoElement.innerText = 0;
+          adviceElement.innerText = "spin the dice...";
+          adviceElement.classList.remove("animate-pulse");
+          dice.classList.remove("animate-spin");
+          return;
+        }
+        
+        adivceNoElement.innerText = lastNo;
+
+      try {
+          let advices = await fetch(`https://api.adviceslip.com/advice/${lastAdivceId}`, requestOptions);  
+          let data = await advices.json();
+          adviceElement.innerText = data.slip.advice;
+          adviceElement.classList.remove("animate-pulse");
+          dice.classList.remove("animate-spin");
+
+      } catch (error){
+        console.log(`There is an server error please report: ${error}`);
+      }
+
+
+     })
 
 
 
@@ -101,28 +127,6 @@
       }
      }
 
-
-     window.addEventListener("load", async () => {
-        if(lastNo === null) {
-          adivceNoElement.innerText = 0;
-          return;
-        }
-        
-        adivceNoElement.innerText = lastNo;
-
-      try {
-          let advices = await fetch(`https://api.adviceslip.com/advice/${lastAdivceId}`, requestOptions);  
-          let data = await advices.json();
-          adviceElement.innerText = data.slip.advice;
-          adviceElement.classList.remove("animate-pulse");
-          dice.classList.remove("animate-spin");
-
-      } catch (error){
-        console.log(`There is an server error please report: ${error}`);
-      }
-
-
-     })
 
 
   </script>
